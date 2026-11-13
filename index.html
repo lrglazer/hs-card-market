@@ -347,7 +347,7 @@ footer{font-size:14px}
 <nav class="top" id="nav"><div class="in">
   <a class="logo" href="#top"><img class="lgimg" src="logo.png" alt="HS Card Market logo">HS Card Market</a>
   <div class="links"><a href="#scan">Scan</a><a href="#market">Market</a><a href="#value">Valuation</a><a href="#tools">Tools</a><a href="#plans">Plans</a></div>
-  <a class="btn pri mag" href="#waitlist">Join the waitlist →</a>
+  <a class="btn pri mag" href="https://hssportscards.com/app">Open the app →</a>
 </div></nav>
 
 <header class="hero" id="top">
@@ -359,7 +359,7 @@ footer{font-size:14px}
       <span class="pill fade"><i>LIVE</i><span class="dot"></span>Real sales data · updated Nov 13, 2026</span>
       <h1><span class="ln"><span>Know what</span></span><span class="ln"><span>every card</span></span><span class="ln"><span class="gold">is worth.</span></span></h1>
       <p class="lead fade d1">Snap a slab and get its price. Spot the best buys before anyone else. Know your max offer before you shake hands.</p>
-      <div class="ctas fade d2" style="margin-top:34px"><a class="btn pri mag" href="#waitlist">Get early access →</a><a class="btn sec mag" href="#watch">▶ Watch the demo</a></div>
+      <div class="ctas fade d2" style="margin-top:34px"><a class="btn pri mag" href="https://hssportscards.com/app">Start free →</a><a class="btn sec mag" href="#watch">▶ Watch the demo</a></div>
       <div class="mini fade d3"><div><b class="holo-t">~30s</b><small>slab to price</small></div><div><b>210+</b><small>verified sales loaded</small></div><div><b>22</b><small>cards tracked</small></div></div>
     </div>
     <div class="scene" id="scene">
@@ -488,22 +488,17 @@ footer{font-size:14px}
 
 <section class="s" id="waitlist" style="padding-top:40px"><div class="wrap">
   <div class="glass rv" style="max-width:760px;margin:0 auto;padding:44px;text-align:center"><div class="gl" style="background:var(--gold);left:-180px;top:-180px;opacity:.2"></div>
-    <span class="eyebrow"><b>✦</b>Early access</span><h2 class="big" style="font-size:clamp(32px,4vw,52px)">Get in <span class="gold">first.</span></h2>
-    <p class="lead" style="margin:0 auto 26px">HS Card Market is opening to collectors and dealers soon. Join the list and you’ll be first to scan.</p>
-    <form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="wlForm" style="display:grid;gap:12px;max-width:520px;margin:0 auto;text-align:left">
-      <input type="hidden" name="form-name" value="waitlist"><p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p>
-      <input name="name" placeholder="Your name" required style="padding:15px 16px;border-radius:14px;border:1px solid var(--line2);background:rgba(0,0,0,.35);color:var(--text);font:inherit">
-      <input name="email" type="email" placeholder="Email address" required style="padding:15px 16px;border-radius:14px;border:1px solid var(--line2);background:rgba(0,0,0,.35);color:var(--text);font:inherit">
-      <select name="role" style="padding:15px 16px;border-radius:14px;border:1px solid var(--line2);background:rgba(0,0,0,.35);color:var(--text);font:inherit"><option>I’m a collector</option><option>I’m a dealer</option><option>Both</option></select>
-      <button class="btn pri" type="submit" style="justify-content:center">Join the waitlist →</button>
-      <div id="wlMsg" style="text-align:center;font-weight:700;min-height:22px"></div>
-    </form></div>
+    <span class="eyebrow"><b>✦</b>Free to start</span><h2 class="big" style="font-size:clamp(32px,4vw,52px)">Your cards, <span class="gold">priced.</span></h2>
+    <p class="lead" style="margin:0 auto 26px">Make a free account, add or scan your first card, and see what it’s worth from real sales. Works on your phone at the card show.</p>
+    <a class="btn pri" href="https://hssportscards.com/app" style="justify-content:center">Create your free account →</a>
+    <p style="margin-top:14px;color:var(--muted);font-size:15px">Already have an H&amp;S Sports Cards account? <a href="https://hssportscards.com/login?next=/app" style="color:var(--gold)">Log in</a></p>
+  </div>
 </div></section>
 
 <div class="cta rv" id="cta"><canvas id="burst"></canvas>
   <div class="in"><span class="eyebrow"><b>✦</b>HS Card Market</span><h2 style="margin:22px 0 22px">Stop guessing.<br><span class="holo-t">Start knowing.</span></h2>
   <p class="lead" style="margin:0 auto 34px">Your next card show, priced before you walk in.</p>
-  <a class="btn pri mag" id="ctabtn" href="#waitlist">Join the waitlist →</a></div>
+  <a class="btn pri mag" id="ctabtn" href="https://hssportscards.com/app">Create your free account →</a></div>
 </div>
 
 <footer><div class="wrap"><a class="logo" href="#top"><img class="lgimg" src="logo.png" alt="HS Card Market logo">HS Card Market</a><span style="margin-left:auto;max-width:660px">Values are estimates from recorded sales and are not financial advice. Not affiliated with or endorsed by PSA, Beckett, SGC, CGC, Card Ladder, eBay, the NBA or any player. All card artwork on this page is original illustration.</span></div></footer>
@@ -694,7 +689,7 @@ function calc() { ['fmv', 'ask', 'fee', 'pro'].forEach(i => paint($(i)));
 // live ticking hero price
 if (!RM) setInterval(() => { const t1 = $('tick1'), v = 15450 + Math.round((Math.random() - .5) * 16) * 25; t1.textContent = fm(v); t1.style.color = v >= 15450 ? 'var(--green)' : 'var(--red)'; setTimeout(() => t1.style.color = '', 700); }, 2400);
 // waitlist submit (Netlify Forms)
-$('wlForm').addEventListener('submit', async e => { e.preventDefault(); const f = e.target, m = $('wlMsg'), b = f.querySelector('button'); b.disabled = true; m.style.color = 'var(--muted)'; m.textContent = 'Sending…';
+if ($('wlForm')) $('wlForm').addEventListener('submit', async e => { e.preventDefault(); const f = e.target, m = $('wlMsg'), b = f.querySelector('button'); b.disabled = true; m.style.color = 'var(--muted)'; m.textContent = 'Sending…';
   try { const r = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(f)).toString() }); if (!r.ok) throw 0; f.querySelectorAll('input:not([type=hidden]),select').forEach(i => i.disabled = true); m.style.color = 'var(--green)'; m.textContent = '✓ You’re on the list. We’ll be in touch.'; }
   catch { b.disabled = false; m.style.color = 'var(--red)'; m.textContent = 'Couldn’t send — please try again.'; } });
 // CTA particles + burst
