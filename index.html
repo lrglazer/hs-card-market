@@ -76,7 +76,7 @@ p.lead{color:var(--text2);font-size:18.5px;max-width:540px}
 @keyframes floor{to{background-position:0 70px}}
 .hero .wrap>div:first-child{position:relative;z-index:6}
 .hero .wrap{position:relative;z-index:3;display:grid;grid-template-columns:1.08fr .92fr;gap:20px;align-items:center;width:100%;padding-top:100px;padding-bottom:60px}
-.hero h1{font-family:var(--disp);font-size:clamp(40px,4.9vw,76px);font-weight:900;letter-spacing:-2.5px;line-height:.98;margin:24px 0 26px}
+.hero h1{font-family:var(--disp);font-size:clamp(50px,6.6vw,104px);font-weight:900;letter-spacing:-2.5px;line-height:.98;margin:24px 0 26px}
 .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
 .hero h1 .ln span{display:inline-block;transform:translateY(110%);transition:transform 1.1s cubic-bezier(.2,.9,.1,1)}
 .ready .hero h1 .ln span{transform:none}
@@ -317,6 +317,27 @@ footer .wrap{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
 footer .logo .lgimg{height:40px}
 #loader .lgl{width:220px;display:block;margin:0 auto 18px;animation:pulse 1.2s ease-in-out infinite}
 .art{background:#000}.art svg.cf{position:absolute;inset:0;left:0;bottom:auto;transform:none;width:100%;height:100%;z-index:0}.art .holo{z-index:2}
+
+/* v10 type scale-up + pro nav/buttons */
+html{font-size:16px}
+nav .links{gap:2px;font-family:var(--disp);font-size:17px;font-weight:500;letter-spacing:.6px;text-transform:uppercase}
+nav .links a{padding:8px 14px}
+.btn{font-family:var(--disp);font-weight:600;font-size:18px;letter-spacing:.6px;text-transform:uppercase}
+nav .btn{font-size:16px;padding:11px 20px}
+.logo{font-family:var(--disp);font-weight:600;font-size:21px;letter-spacing:.4px}
+p.lead{font-size:21px;line-height:1.55;max-width:600px}
+.eyebrow{font-size:14px;letter-spacing:3.5px}.eyebrow b{width:32px;height:32px;font-size:13px}
+.hero .mini small{font-size:15px}
+.step .n{font-size:15px}
+.ladder small{font-size:13px}.ladder b{font-size:17px}
+.calc label{font-size:15px}
+.score{font-size:14px}
+.res .r1{font-size:13px}.res .r2{font-size:17px}
+.plan>span{font-size:15px!important}
+footer{font-size:14px}
+@media (max-width:760px){nav .btn{font-size:14px;padding:9px 13px}p.lead{font-size:18px}}
+.ftag small,.ftag .s{font-size:13.5px}
+.pill{font-size:15px}
 </style>
 </head>
 <body class="lock">
