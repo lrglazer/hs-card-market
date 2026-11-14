@@ -11,14 +11,14 @@
 <meta property="og:image" content="poster.jpg"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23f3b93f'/%3E%3Ctext x='32' y='42' font-family='Arial Black,Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%23140d00'%3EHS%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#05060a;--bg2:#0a0c12;--panel:#10141c;--line:#1d2430;--line2:#2a3342;--text:#f3f5fa;--text2:#b6bfcd;--muted:#7a8597;
 --gold:#f3b93f;--gold2:#ffdb7a;--amber:#c98a12;--green:#34d17f;--red:#ff5d5a;--blue:#5aa2ff;--violet:#a07cff;--pink:#ff5fb1;--cyan:#41e0ff;
---mono:'JetBrains Mono',monospace;--disp:'Oswald','Arial Narrow',sans-serif}
+--mono:'JetBrains Mono',monospace;--disp:'Archivo','Arial Narrow',sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:Barlow,system-ui,sans-serif;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 body.lock{overflow:hidden}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1240px;margin:0 auto;padding:0 28px}
@@ -273,7 +273,7 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
 .plan{padding:28px;border-radius:26px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.012));border:1px solid var(--line2);position:relative;overflow:hidden;transition:transform .3s}
 .plan:hover{transform:translateY(-6px)}
 .plan.hot{border:1px solid transparent;background:linear-gradient(var(--panel),var(--panel)) padding-box,linear-gradient(135deg,#ffdb7a,#ff5fb1,#a07cff,#41e0ff) border-box;box-shadow:0 30px 90px rgba(243,185,63,.15)}
-.plan h3{font-size:16px}.plan .pr{font-family:var(--disp);font-size:44px;font-weight:900;letter-spacing:-2px;margin:14px 0 2px}.plan .pr small{font-family:Barlow;font-size:15px;color:var(--muted);font-weight:500;letter-spacing:0}
+.plan h3{font-size:16px}.plan .pr{font-family:var(--disp);font-size:44px;font-weight:900;letter-spacing:-2px;margin:14px 0 2px}.plan .pr small{font-family:Inter;font-size:15px;color:var(--muted);font-weight:500;letter-spacing:0}
 .plan ul{list-style:none;margin-top:20px;display:grid;gap:10px;color:var(--text2);font-size:14px}
 .plan li::before{content:"✦";color:var(--gold);margin-right:9px}
 .plan .badge{position:absolute;top:16px;right:16px;font-size:10.5px;font-weight:800;background:linear-gradient(135deg,#ffdb7a,#f3b93f);color:#140d00;padding:5px 10px;border-radius:99px}
@@ -338,6 +338,16 @@ footer{font-size:14px}
 @media (max-width:760px){nav .btn{font-size:14px;padding:9px 13px}p.lead{font-size:18px}}
 .ftag small,.ftag .s{font-size:13.5px}
 .pill{font-size:15px}
+
+/* H&S type: Archivo display + Inter body (matches hssportscards.com and the app) */
+.hero h1{font-weight:900;font-stretch:112%;letter-spacing:-.035em;font-size:clamp(44px,5.4vw,84px);line-height:.98}
+h2,.big{font-stretch:110%;letter-spacing:-.03em}
+nav .links{font-stretch:108%;font-weight:600;font-size:14px;letter-spacing:.06em}
+.btn{font-stretch:108%;font-weight:800;font-size:15px;letter-spacing:.04em}
+nav .btn{font-size:14px}
+.logo{font-stretch:110%;font-weight:700;font-size:19px;letter-spacing:-.01em;text-transform:none}
+p.lead{font-size:19.5px;letter-spacing:-.005em}
+.art svg.cf text{font-stretch:75%}
 </style>
 </head>
 <body class="lock">
@@ -532,7 +542,7 @@ function cardFront(c) {
   const id = 'cf' + (++__cfid), fam = cardFamily(c), [c1, c2, c3] = TEAMC(c.player || ''), no = JERSEY(c);
   const last = String(c.player || '').trim().split(/\s+/).pop().toUpperCase() || 'PLAYER';
   const R = rnd(hashStr((c.player || '') + c.year + c.set + c.variant) + 7);
-  const disp = `font-family="'Oswald',Impact,'Arial Narrow',sans-serif" font-weight="900"`;
+  const disp = `font-family="'Archivo',Impact,'Arial Narrow',sans-serif" font-weight="900"`;
   let defs = '', bg = '', numFill = c1, numStroke = 'none', numSW = 0, numShadow = c3, nameFill = '#fff', nameStroke = c3, ball = .16, edge = '#efe9d8', foot = '#fff';
   const rays = (n, cx, cy, cols, op) => { let s = ''; for (let i = 0; i < n; i++) { const a0 = i / n * Math.PI * 2, a1 = (i + .5) / n * Math.PI * 2; s += `<path d="M${cx} ${cy}L${cx + Math.cos(a0) * 400} ${cy + Math.sin(a0) * 400}L${cx + Math.cos(a1) * 400} ${cy + Math.sin(a1) * 400}Z" fill="${cols[i % cols.length]}" opacity="${op}"/>`; } return s; };
   const chrome = `<linearGradient id="${id}ch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#cfd6df"/><stop offset=".5" stop-color="#7d8794"/><stop offset=".62" stop-color="#eef2f6"/><stop offset="1" stop-color="#9aa4b1"/></linearGradient>`;
@@ -579,7 +589,7 @@ function cardFront(c) {
     <text x="120" y="${no.length > 1 ? 190 : 206}" text-anchor="middle" ${disp} font-size="${fs}" letter-spacing="-4" fill="${numShadow}" opacity=".9" transform="translate(5 5)">${no}</text>
     <text x="120" y="${no.length > 1 ? 190 : 206}" text-anchor="middle" ${disp} font-size="${fs}" letter-spacing="-4" fill="${numFill}" stroke="${numStroke}" stroke-width="${numSW}" paint-order="stroke">${no}</text>
     <text transform="translate(30 266) rotate(-90)" ${disp} font-size="34" letter-spacing="1.5" ${last.length > 7 ? 'textLength="236" lengthAdjust="spacingAndGlyphs"' : ''} fill="${nameFill}" stroke="${nameStroke}" stroke-width="4" paint-order="stroke">${esc(last)}</text>
-    <text x="190" y="270" text-anchor="end" font-family="Barlow,Arial,sans-serif" font-weight="800" font-size="9" letter-spacing="1" fill="${foot}" opacity=".85">${esc(String(c.year || '').slice(0, 4))} · #${esc(String(c.number || '').replace(/^#/, ''))}</text>${rc}</svg>`;
+    <text x="190" y="270" text-anchor="end" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="9" letter-spacing="1" fill="${foot}" opacity=".85">${esc(String(c.year || '').slice(0, 4))} · #${esc(String(c.number || '').replace(/^#/, ''))}</text>${rc}</svg>`;
   return { svg, edge, holo: { refractor: 1, prizm: .9, holo: 1, flair: .85, chrome: .7, sticker: .55, ud: .4, retro: .22 }[fam] };
 }
 
