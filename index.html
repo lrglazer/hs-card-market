@@ -7,8 +7,8 @@
 <title>HS Card Market — Know what every card is worth</title>
 <meta name="description" content="Scan a graded slab or raw card and get its price from real sales. Find the best buys, know your max offer, and track your collection.">
 <meta property="og:title" content="HS Card Market — Know what every card is worth">
-<meta property="og:description" content="Snap a slab, get its price. Real-sales valuations, best-buy rankings, and card-show tools for collectors and dealers.">
-<meta property="og:image" content="poster.jpg"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:description" content="Point your phone at any card and get its price from real sales. Live scanning, show-floor max offers, and every dealer tool in one free app.">
+<meta property="og:image" content="https://hscardmarket.com/poster.jpg"><link rel="canonical" href="https://hscardmarket.com/"><meta property="og:url" content="https://hscardmarket.com/"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23f3b93f'/%3E%3Ctext x='32' y='42' font-family='Arial Black,Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%23140d00'%3EHS%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -348,6 +348,148 @@ nav .btn{font-size:14px}
 .logo{font-stretch:110%;font-weight:700;font-size:19px;letter-spacing:-.01em;text-transform:none}
 p.lead{font-size:19.5px;letter-spacing:-.005em}
 .art svg.cf text{font-stretch:75%}
+
+/* ===== v12: toolkit demos, phone states, brand, FAQ, free plan, footer ===== */
+.kit{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:60px}
+.kt{grid-column:span 2;border-radius:26px;border:1px solid var(--line2);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.012));padding:24px;position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:330px;transition:border-color .3s,transform .3s}
+.kt:hover{border-color:rgba(243,185,63,.45);transform:translateY(-4px)}
+.kt::before{content:"";position:absolute;inset:0;background:radial-gradient(380px circle at var(--x,50%) var(--y,0%),rgba(243,185,63,.13),transparent 45%);opacity:0;transition:opacity .3s;pointer-events:none}
+.kt:hover::before{opacity:1}
+.kt.k-show{grid-column:span 4}
+.kh{display:flex;flex-direction:column;gap:2px;margin-bottom:16px}
+.kn{font-family:var(--disp);font-weight:850;font-stretch:110%;font-size:22px;letter-spacing:-.02em}
+.kd{color:var(--muted);font-size:14px}
+.km{flex:1;position:relative;border-radius:18px;background:#07090e;border:1px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center;padding:18px}
+.ms{width:120px;height:190px;border-radius:10px;padding:6px;background:linear-gradient(160deg,rgba(255,255,255,.2),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.2);box-shadow:0 20px 40px rgba(0,0,0,.5);flex-shrink:0}
+.ms .lab{height:30px;padding:4px 6px}.ms .lab .t{font-size:6px}.ms .lab .t small{font-size:5px}.ms .lab .g{font-size:13px}.ms .lab .g small{font-size:5px}
+.ms .art{height:142px;border-width:3px;margin-top:5px}
+/* show mode */
+.km.show{gap:26px;justify-content:flex-start;padding:22px 26px}
+.sinfo{flex:1;min-width:0}
+.sname{font-family:var(--disp);font-weight:800;font-size:18px;letter-spacing:-.01em}
+.snums{display:grid;grid-template-columns:1fr 1fr;margin:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.snums div{padding:10px 0}.snums div+div{padding-left:16px;border-left:1px solid var(--line)}
+.snums small,.sask small{display:block;color:var(--muted);font-size:12px}
+.snums b{font-family:var(--disp);font-weight:900;font-size:clamp(26px,3vw,38px);letter-spacing:-.03em;line-height:1.05}
+.snums .mx b{color:var(--gold2)}
+.sinput{margin-top:5px;height:44px;border-radius:10px;border:1px solid rgba(243,185,63,.6);background:#0b0e15;display:flex;align-items:center;padding:0 14px;font-family:var(--disp);font-weight:800;font-size:22px}
+.caret{display:inline-block;width:2px;height:22px;background:var(--gold);margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.sverd{margin-top:12px;display:flex;align-items:baseline;gap:12px;padding:10px 16px;background:rgba(52,209,127,.15);color:var(--green);clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);opacity:0;transform:translateY(10px);transition:all .45s cubic-bezier(.2,.8,.2,1)}
+.sverd b{font-family:var(--disp);font-weight:900;font-stretch:112%;font-size:30px;line-height:1}.sverd span{font-size:13px}
+.sverd.on{opacity:1;transform:none}
+/* trade */
+.km.trade{flex-direction:column;gap:10px}
+.tscale{width:100%;max-width:230px}
+.tscale .beam{transform-origin:120px 40px;animation:tilt 4s ease-in-out infinite}
+.tscale .pl{transform-origin:30px 40px;animation:untilt 4s ease-in-out infinite}.tscale .pr{transform-origin:210px 40px;animation:untilt 4s ease-in-out infinite}
+@keyframes tilt{0%,100%{transform:rotate(0)}30%,70%{transform:rotate(9deg)}}
+@keyframes untilt{0%,100%{transform:rotate(0)}30%,70%{transform:rotate(-9deg)}}
+.tt{display:grid;grid-template-columns:1fr 1fr;width:100%;border:1px solid var(--line);border-radius:10px}
+.tt div{padding:8px 12px}.tt div+div{border-left:1px solid var(--line)}.tt small{display:block;color:var(--muted);font-size:11.5px}.tt b{font-family:var(--disp);font-weight:900;font-size:22px}
+.tv{width:100%;text-align:center;font-family:var(--disp);font-weight:900;font-stretch:110%;font-size:20px;color:var(--green);background:rgba(52,209,127,.13);padding:8px;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+/* centering */
+.km.cen{gap:18px}
+.cbox{position:relative;width:132px;height:184px;flex-shrink:0;background:#f1ebdc;border-radius:6px;box-shadow:0 14px 30px rgba(0,0,0,.5)}
+.ccard{position:absolute;top:7%;bottom:6%;left:var(--l,9%);right:var(--r,9%);overflow:hidden;border-radius:2px;transition:left 1.2s cubic-bezier(.6,0,.2,1),right 1.2s cubic-bezier(.6,0,.2,1)}
+.ccard svg{width:100%;height:100%;display:block}
+.cl{position:absolute;top:-8px;bottom:-8px;width:2px}
+.cl.o{background:var(--gold);box-shadow:0 0 8px var(--gold)}
+.cl.i{background:var(--cyan);box-shadow:0 0 8px var(--cyan);transition:left 1.2s cubic-bezier(.6,0,.2,1)}
+.cread small{display:block;color:var(--muted);font-size:12px}.cread b{display:block;font-family:var(--disp);font-weight:900;font-size:30px;letter-spacing:-.02em;margin-bottom:8px}
+.cread .cg{color:var(--gold2);transition:color .3s}
+/* advisor */
+.km.adv{flex-direction:column;align-items:stretch;justify-content:flex-start;gap:10px}
+.bub{max-width:88%;padding:10px 14px;border-radius:14px;font-size:13.5px;line-height:1.45}
+.bub.me{align-self:flex-end;background:var(--gold);color:#140d00;font-weight:600;border-bottom-right-radius:4px}
+.bub.ai{align-self:flex-start;background:#121722;border:1px solid var(--line2);border-bottom-left-radius:4px;min-height:44px;color:var(--text2)}
+.bub.ai b{color:var(--text)}
+/* showcase */
+.km.case{padding:0;background:radial-gradient(ellipse 60% 70% at 50% 0%,rgba(255,214,140,.2),transparent 60%),linear-gradient(#0b1020,#05070c)}
+.cbeam{position:absolute;top:-20px;left:50%;width:200px;margin-left:-100px;height:85%;background:linear-gradient(180deg,rgba(255,226,160,.22),transparent);clip-path:polygon(40% 0,60% 0,100% 100%,0 100%);filter:blur(6px)}
+.crow{position:relative;width:100%;height:220px}
+.crow .ms{position:absolute;left:50%;top:14px;margin-left:-60px;transition:transform 1s cubic-bezier(.6,0,.2,1),opacity 1s,filter 1s}
+.cfloor{position:absolute;left:10%;right:10%;bottom:28px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);box-shadow:0 0 14px rgba(243,185,63,.7)}
+/* pnl */
+.km.pnl{flex-direction:column;align-items:stretch;gap:12px}
+.pbig small{display:block;color:var(--muted);font-size:12px}.pbig b{display:block;font-family:var(--disp);font-weight:900;font-size:42px;letter-spacing:-.03em;color:var(--green);line-height:1.05}.pbig span{font-size:12.5px;color:var(--muted)}
+.pbars{display:flex;align-items:flex-end;gap:8px;height:92px}
+.pbars i{flex:1;height:var(--h);border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--green),rgba(52,209,127,.15));transform-origin:bottom;transform:scaleY(0);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.k-pnl.in .pbars i{transform:scaleY(1)}
+.k-pnl.in .pbars i:nth-child(2){transition-delay:.08s}.k-pnl.in .pbars i:nth-child(3){transition-delay:.16s}.k-pnl.in .pbars i:nth-child(4){transition-delay:.24s}.k-pnl.in .pbars i:nth-child(5){transition-delay:.32s}.k-pnl.in .pbars i:nth-child(6){transition-delay:.4s}.k-pnl.in .pbars i:nth-child(7){transition-delay:.48s}
+/* any card */
+.km.any{flex-direction:column;align-items:stretch;justify-content:flex-start;gap:12px}
+.aq{height:46px;border-radius:12px;border:1px solid var(--line2);background:#0b0e15;display:flex;align-items:center;padding:0 14px;font-size:15px;gap:8px;color:var(--text)}
+.aq .mag{color:var(--muted);font-size:18px}
+.ast{display:flex;align-items:center;gap:10px;color:var(--gold2);font-weight:600;font-size:14px;opacity:0;transition:opacity .3s}
+.ast.on{opacity:1}
+.spin{width:16px;height:16px;border-radius:50%;border:2px solid rgba(243,185,63,.3);border-top-color:var(--gold);animation:sp .8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.ares{border:1px solid var(--line2);border-radius:12px;padding:12px 14px;background:#0d111a;opacity:0;transform:translateY(8px);transition:all .5s cubic-bezier(.2,.8,.2,1)}
+.ares.on{opacity:1;transform:none}
+.ares small{display:block;color:var(--muted);font-size:12px}.ares b{display:block;font-family:var(--disp);font-weight:900;font-size:34px;letter-spacing:-.03em}
+.arow{display:flex;justify-content:space-between;font-size:12.5px;color:var(--text2);border-top:1px solid var(--line);padding-top:6px;margin-top:6px}
+/* grade */
+.km.gr2{gap:22px}
+.gring{position:relative;width:140px;height:140px;flex-shrink:0}.gring svg{width:100%;height:100%}
+.gring>div{position:absolute;inset:0;display:grid;place-content:center;text-align:center}.gring small{color:var(--muted);font-size:11px}.gring b{font-family:var(--disp);font-weight:900;font-size:28px}
+.garc{transition:stroke-dashoffset 1.6s cubic-bezier(.2,.8,.2,1)}
+.k-grade.in .garc{stroke-dashoffset:135}
+.gv{font-family:var(--disp);font-weight:900;font-stretch:110%;font-size:24px;color:var(--green)}.gv span{display:block;font-family:Inter;font-weight:500;font-stretch:100%;font-size:13px;color:var(--text2);margin-top:4px}
+/* phone states */
+.phone .art{overflow:hidden}.phone .art svg.cf{position:absolute;inset:0;width:100%;height:100%;transform:none;left:0}
+.cpill{position:absolute;left:50%;top:44px;transform:translateX(-50%);z-index:8;white-space:nowrap}
+.cpill span{display:none;font-family:var(--disp);font-weight:700;font-size:14px;padding:6px 14px;border-radius:99px;background:rgba(5,7,12,.85);border:1px solid var(--gold);color:var(--gold2)}
+.ph1 .cpill .s1,.ph2 .cpill .s2{display:inline-block}
+.ph3 .cpill .s3{display:inline-block;border-color:var(--green);color:var(--green)}
+
+.cflash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:7}
+.ph2 .cflash{animation:cfl .5s ease-out}
+@keyframes cfl{0%{opacity:.8}100%{opacity:0}}
+/* brand */
+.brand{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.bimg{position:relative;display:grid;place-items:center;min-height:360px}
+.bimg img{position:relative;width:min(420px,90%);filter:drop-shadow(0 30px 60px rgba(0,0,0,.6));animation:bob 6s ease-in-out infinite}
+.bglow{position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(243,185,63,.35),transparent 65%);filter:blur(20px)}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-14px) rotate(1.5deg)}}
+.bl{margin-top:26px}
+/* faq */
+.faq{margin-top:50px;display:grid;gap:12px}
+.faq details{border:1px solid var(--line2);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));overflow:hidden;transition:border-color .3s}
+.faq details[open]{border-color:rgba(243,185,63,.5)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 24px;font-family:var(--disp);font-weight:800;font-stretch:105%;font-size:19px;letter-spacing:-.01em;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:26px;color:var(--gold);transition:transform .3s;flex-shrink:0}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{padding:0 24px 22px;color:var(--text2);font-size:16px;line-height:1.6}
+.faq summary:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+/* free plan */
+.freeplan{margin:56px auto 0;max-width:980px;display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;padding:44px;align-items:center}
+.fpr{font-family:var(--disp);font-weight:900;font-size:110px;letter-spacing:-.05em;line-height:.9}
+.fps{color:var(--text2);margin:8px 0 22px}
+.fpu{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 22px;color:var(--text2);font-size:15px}
+.fpu li::before{content:"✓";color:var(--green);font-weight:800;margin-right:10px}
+/* footer */
+footer .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;align-items:start}
+.fdesc{color:var(--muted);font-size:14px;margin-top:12px;max-width:280px}
+.fcol{display:flex;flex-direction:column;gap:9px}.fcol h4{font-family:var(--disp);font-size:14px;font-weight:800;color:var(--text);letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
+.fcol a{color:var(--muted);font-size:14px;transition:color .2s}.fcol a:hover{color:var(--gold2)}
+.fbot{display:flex;justify-content:space-between;gap:30px;margin-top:36px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+.fbot span:last-child{max-width:680px;text-align:right}
+/* nav on phones */
+nav .btn{white-space:nowrap}
+@media (max-width:1100px){.kit{grid-template-columns:repeat(2,1fr)}.kt,.kt.k-show{grid-column:span 1}.kt.k-show{grid-column:span 2}}
+@media (max-width:760px){
+  .kit{grid-template-columns:1fr}.kt,.kt.k-show{grid-column:span 1}.km.show{flex-direction:column;align-items:center}.sinfo{width:100%}
+  .brand{grid-template-columns:1fr;gap:20px}.bimg{min-height:260px}
+  .freeplan{grid-template-columns:1fr;padding:28px}.fpu{grid-template-columns:1fr}.fpr{font-size:80px}
+  footer .fgrid{grid-template-columns:1fr 1fr}.fbot{flex-direction:column}.fbot span:last-child{text-align:left}
+  nav .btn{padding:9px 12px;font-size:12.5px;flex-shrink:0}
+  nav.top .in{gap:10px;padding:0 10px}nav .logo{font-size:16px;min-width:0}nav .logo .lgimg{height:42px}
+  .hero .mini{gap:20px}.hero .mini b{font-size:21px}
+  .faq summary{font-size:17px;padding:18px}
+}
+@media (prefers-reduced-motion:reduce){.tscale .beam,.tscale .pl,.tscale .pr,.bimg img,.caret,.spin{animation:none}}
 </style>
 </head>
 <body class="lock">
@@ -356,8 +498,8 @@ p.lead{font-size:19.5px;letter-spacing:-.005em}
 
 <nav class="top" id="nav"><div class="in">
   <a class="logo" href="#top"><img class="lgimg" src="logo.png" alt="HS Card Market logo">HS Card Market</a>
-  <div class="links"><a href="#scan">Scan</a><a href="#market">Market</a><a href="#value">Valuation</a><a href="#tools">Tools</a><a href="#plans">Plans</a></div>
-  <a class="btn pri mag" href="https://hssportscards.com/app">Open the app →</a>
+  <div class="links"><a href="#scan">Scan</a><a href="#toolkit">Tools</a><a href="#market">Market</a><a href="#value">Valuation</a><a href="#faq">FAQ</a></div>
+  <a class="btn pri mag" href="https://hssportscards.com/app">Open app →</a>
 </div></nav>
 
 <header class="hero" id="top">
@@ -368,9 +510,9 @@ p.lead{font-size:19.5px;letter-spacing:-.005em}
     <div>
       <span class="pill fade"><i>LIVE</i><span class="dot"></span>Real sales data · updated Nov 13, 2026</span>
       <h1><span class="ln"><span>Know what</span></span><span class="ln"><span>every card</span></span><span class="ln"><span class="gold">is worth.</span></span></h1>
-      <p class="lead fade d1">Snap a slab and get its price. Spot the best buys before anyone else. Know your max offer before you shake hands.</p>
+      <p class="lead fade d1">Point your phone at any card. It scans itself, reads the grade, and prices it from real sales. Know your max offer before you shake hands.</p>
       <div class="ctas fade d2" style="margin-top:34px"><a class="btn pri mag" href="https://hssportscards.com/app">Start free →</a><a class="btn sec mag" href="#watch">▶ Watch the demo</a></div>
-      <div class="mini fade d3"><div><b class="holo-t">~30s</b><small>slab to price</small></div><div><b>210+</b><small>verified sales loaded</small></div><div><b>22</b><small>cards tracked</small></div></div>
+      <div class="mini fade d3"><div><b class="gold">1 sec</b><small>hold still, it scans</small></div><div><b>Any card</b><small>every sport, any grade</small></div><div><b>$0</b><small>free to start</small></div></div>
     </div>
     <div class="scene" id="scene">
       <div class="fan3" id="fan3"><div class="glowb"></div></div>
@@ -389,13 +531,13 @@ p.lead{font-size:19.5px;letter-spacing:-.005em}
   <div style="max-width:760px"><span class="eyebrow rv"><b>01</b>Scan</span><h2 class="big rv d1">Point. Snap. <span class="gold">Priced.</span></h2></div>
   <div class="story">
     <div class="steps">
-      <div class="step" data-ph="1"><div class="n">STEP 01 · DETECT</div><h3>Finds the card in the frame</h3><p>Shoot a slab or a raw card on any surface. The app locks onto the card and checks the photo is sharp enough to read.</p></div>
+      <div class="step" data-ph="1"><div class="n">STEP 01 · DETECT</div><h3>Hold it in the frame</h3><p>Open the camera and point it at a slab or a raw card. Hold still for a second and it captures by itself. No button, no upload.</p></div>
       <div class="step" data-ph="2"><div class="n">STEP 02 · READ</div><h3>Reads the label like an expert</h3><p>Player, year, set, card number, parallel, grader, grade and cert number. Raw cards get centering, corners, edges and surface scored.</p></div>
-      <div class="step" data-ph="3"><div class="n">STEP 03 · PRICE</div><h3>Prices it from real sales</h3><p>Pulls the value for that exact grade from verified sales, then shows your dealer max offer and gain vs. cost. One tap adds it to your collection.</p></div>
+      <div class="step" data-ph="3"><div class="n">STEP 03 · PRICE</div><h3>Prices it from real sales</h3><p>Pulls recent sold prices for that exact card and grade, any sport, with the last few sales and your max offer. One tap adds it to your collection.</p></div>
     </div>
     <div class="sticky"><div class="phone ph1" id="phone"><div class="notch"></div><div class="scr"></div>
       <div class="card"><div class="lab"><div class="t">1986 FLEER BASKETBALL<small>#57 · ROOKIE</small></div><div class="g"><small>NM-MT</small>8</div><div class="br" style="background:linear-gradient(90deg,#c62828,#ff5d5a)"></div></div><div class="art c-red"><div class="holo"></div></div></div>
-      <div class="brk"><i></i><i></i><i></i><i></i></div><div class="laser"></div><div class="hl"></div>
+      <div class="brk"><i></i><i></i><i></i><i></i></div><div class="cpill"><span class="s1">Hold still…</span><span class="s2">Reading the label…</span><span class="s3">✓ Priced</span></div><div class="cflash"></div><div class="laser"></div><div class="hl"></div>
       <div class="ocr">› YEAR ........ 1986<br>› SET ......... FLEER<br>› CARD # ...... 57<br>› GRADE ....... PSA 8 NM-MT<br>› CONFIDENCE .. HIGH</div>
       <div class="res"><div class="r1">Identified · High confidence</div><div class="r2">1986 Fleer #57 · PSA 8</div><div class="r3"><div><div class="r1">Market value · 39 sales / 30 days</div><b>$15,450</b></div><span class="chip">+$7,950 vs cost</span></div></div>
     </div></div>
@@ -408,10 +550,10 @@ p.lead{font-size:19.5px;letter-spacing:-.005em}
 </div></section>
 <section class="s" style="padding-top:40px"><div class="wrap">
   <div class="nums rv" id="nums">
-    <div><b data-to="210" data-suf="+">0</b><small>verified sales in the app</small></div>
-    <div><b data-to="22" data-suf="">0</b><small>key cards tracked</small></div>
-    <div><b data-to="30" data-suf="s">0</b><small>average scan time</small></div>
-    <div><b data-to="6" data-suf="">0</b><small>factors per research score</small></div>
+    <div><b data-to="214" data-suf="+">0</b><small>verified Card Ladder sales built in</small></div>
+    <div><b data-to="10" data-suf="">0</b><small>dealer tools in one app</small></div>
+    <div><b data-to="4" data-suf="">0</b><small>grading companies it reads</small></div>
+    <div><b data-to="1" data-suf="s">0</b><small>hold time to auto-scan</small></div>
   </div>
 </div></section>
 
@@ -465,37 +607,92 @@ p.lead{font-size:19.5px;letter-spacing:-.005em}
   </div>
 </div></section>
 
+
+<section class="s" id="toolkit"><div class="wrap">
+  <div style="text-align:center"><span class="eyebrow rv"><b>✦</b>The toolkit</span><h2 class="big rv d1">Every tool a dealer needs.<br><span class="gold">All in your pocket.</span></h2>
+  <p class="lead rv d2" style="margin:0 auto">Each one below is running live. This is what the app actually does.</p></div>
+  <div class="kit">
+    <div class="kt k-show rv"><div class="kh"><span class="kn">Show Mode</span><span class="kd">Built for the card show floor</span></div>
+      <div class="km show">
+        <div class="ms" id="kShowSlab"></div>
+        <div class="sinfo"><div class="sname">Jordan 1986 Fleer #57 · PSA 8</div>
+          <div class="snums"><div><small>Market value</small><b>$15,450</b></div><div class="mx"><small>Your max offer · 70%</small><b>$10,815</b></div></div>
+          <div class="sask"><small>Their asking price</small><div class="sinput"><span id="kAsk"></span><i class="caret"></i></div></div>
+          <div class="sverd" id="kVerd"><b>BUY</b><span>$5,398 profit selling at market</span></div></div>
+      </div></div>
+    <div class="kt k-trade rv d1"><div class="kh"><span class="kn">Trade analyzer</span><span class="kd">Who wins the trade, from real comps</span></div>
+      <div class="km trade"><svg viewBox="0 0 240 150" class="tscale"><path d="M120 40 L104 138 H136 Z" fill="#1E2638"/><rect x="88" y="136" width="64" height="8" rx="2" fill="#2A3550"/>
+        <g class="beam"><rect x="22" y="37" width="196" height="6" rx="3" fill="#f3b93f"/><g class="pl"><path d="M30 40 L12 82 M30 40 L48 82" stroke="#5f6878" stroke-width="1.5"/><path d="M6 82 H54 Q30 98 6 82Z" fill="#f3b93f"/></g><g class="pr"><path d="M210 40 L192 82 M210 40 L228 82" stroke="#5f6878" stroke-width="1.5"/><path d="M186 82 H234 Q210 98 186 82Z" fill="#34d17f"/></g></g><circle cx="120" cy="40" r="7" fill="#ffdb7a"/></svg>
+        <div class="tt"><div><small>You give</small><b>$1,248</b></div><div><small>You get</small><b>$3,550</b></div></div><div class="tv">You win $2,302</div></div></div>
+    <div class="kt k-cen rv d2"><div class="kh"><span class="kn">Centering</span><span class="kd">Drag the lines, see the grade it allows</span></div>
+      <div class="km cen"><div class="cbox"><div class="ccard" id="kCenCard"></div><i class="cl v o" style="left:6%"></i><i class="cl v i" id="kL"></i><i class="cl v i" id="kR"></i><i class="cl v o" style="left:94%"></i></div>
+        <div class="cread"><small>Left / right</small><b id="kRatio">55/45</b><small>Best grade from centering</small><b class="cg" id="kGrade">PSA 10</b></div></div></div>
+    <div class="kt k-adv rv"><div class="kh"><span class="kn">AI advisor</span><span class="kd">Ask about your own cards</span></div>
+      <div class="km adv"><div class="bub me">What should I sell right now?</div><div class="bub ai" id="kAdv"></div></div></div>
+    <div class="kt k-case rv d1"><div class="kh"><span class="kn">Showcase</span><span class="kd">Full-screen display case for buyers</span></div>
+      <div class="km case"><div class="cbeam"></div><div class="crow" id="kCase"></div><div class="cfloor"></div></div></div>
+    <div class="kt k-pnl rv d2"><div class="kh"><span class="kn">Profit &amp; taxes</span><span class="kd">Every sale, ready for the accountant</span></div>
+      <div class="km pnl"><div class="pbig"><small>Realized profit</small><b>$1,700</b><span>Sold 1988 Fleer #17 PSA 10 for $8,200</span></div>
+        <div class="pbars"><i style="--h:30%"></i><i style="--h:46%"></i><i style="--h:38%"></i><i style="--h:62%"></i><i style="--h:55%"></i><i style="--h:80%"></i><i style="--h:94%"></i></div></div></div>
+    <div class="kt k-any rv"><div class="kh"><span class="kn">Any card, any sport</span><span class="kd">Not in the database? It finds recent sales</span></div>
+      <div class="km any"><div class="aq"><span class="mag">⌕</span><span id="kQ"></span><i class="caret"></i></div>
+        <div class="ast" id="kAst"><span class="spin"></span>Finding recent sales…</div>
+        <div class="ares" id="kRes"><div><small>2023 Prizm Silver · Wembanyama · PSA 10</small><b>$2,799</b></div><div class="arow"><span>Sales in the last 3 months</span><span>209</span></div><div class="arow"><span>3-month change</span><span style="color:var(--red)">▼ 11%</span></div></div></div></div>
+    <div class="kt k-grade rv d1"><div class="kh"><span class="kn">Grade it or sell raw?</span><span class="kd">Grading odds vs. real prices and fees</span></div>
+      <div class="km gr2"><div class="gring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="48" fill="none" stroke="#1d2430" stroke-width="12"/><circle class="garc" cx="60" cy="60" r="48" fill="none" stroke="#f3b93f" stroke-width="12" stroke-linecap="round" stroke-dasharray="301.6" stroke-dashoffset="301.6" transform="rotate(-90 60 60)"/></svg><div><small>Most likely</small><b>PSA 8</b></div></div>
+        <div class="gv">✓ GRADE IT<span>Raw sells for $3,350. Even a PSA 7 sells for $10,323.</span></div></div></div>
+  </div>
+</div></section>
 <section class="s"><div class="wrap">
-  <div style="text-align:center"><span class="eyebrow rv"><b>✦</b>Everything you need</span><h2 class="big rv d1">Built for collectors.<br><span class="gold">Weaponized for dealers.</span></h2></div>
+  <div style="text-align:center"><span class="eyebrow rv"><b>✦</b>Everything you need</span><h2 class="big rv d1">And the everyday stuff,<br><span class="gold">done right.</span></h2></div>
   <div class="bento">
     <div class="bx w3 rv"><div class="ic">📈</div><h3>Portfolio tracking</h3><p>Cost basis, live value, gains on paper and realized profit for every card you hold or sell. Value by player at a glance.</p></div>
     <div class="bx w3 rv d1"><div class="ic">🔎</div><h3>Look up anything</h3><p>Type “86 Fleer Jordan PSA 8” or a PSA cert number. The app works out the exact card and shows its price.</p></div>
-    <div class="bx rv"><div class="ic">👁</div><h3>Watchlist alerts</h3><p>Get flagged the moment a card drops into your buy zone.</p></div>
+    <div class="bx rv"><div class="ic">👁</div><h3>Watchlist deals</h3><p>Track cards you want and see right away when an asking price is a good deal.</p></div>
     <div class="bx rv d1"><div class="ic">✍️</div><h3>Signed memorabilia</h3><p>Balls, jerseys and photos, valued by authenticator and provenance.</p></div>
     <div class="bx rv d2"><div class="ic">⚡</div><h3>One-paste import</h3><p>Paste eBay or 130point sold listings. Lots, reprints and best offers get flagged.</p></div>
   </div>
 </div></section>
 
 <section class="s" id="road" style="padding-top:60px"><div class="wrap">
-  <div style="text-align:center"><span class="eyebrow rv"><b>✦</b>Roadmap</span><h2 class="big rv d1">Basketball first.<br><span class="gold">Then the whole hobby.</span></h2></div>
+  <div style="text-align:center"><span class="eyebrow rv"><b>✦</b>Roadmap</span><h2 class="big rv d1">Every sport today.<br><span class="gold">Deeper every week.</span></h2></div>
   <div class="road" id="roadw">
     <svg class="path" viewBox="0 0 1000 4" preserveAspectRatio="none"><line x1="160" x2="840" y1="2" y2="2" stroke="#2a3342" stroke-width="2"/><line id="rline" x1="160" x2="840" y1="2" y2="2" stroke="#f3b93f" stroke-width="3" stroke-dasharray="680" stroke-dashoffset="680" style="transition:stroke-dashoffset 2s cubic-bezier(.6,0,.2,1)"/></svg>
-    <div class="st live"><div class="dot">🏀</div><div class="lb">LIVE NOW</div><h3>Basketball</h3><p>Jordan, LeBron and Wembanyama first: iconic rookies, 1990s inserts, modern parallels.</p></div>
-    <div class="st"><div class="dot">⚾</div><div class="lb">NEXT</div><h3>Bowman Chrome</h3><p>1st Bowman autos, color parallels, and prospect values that move with call-ups.</p></div>
-    <div class="st"><div class="dot">🏈</div><div class="lb">LATER</div><h3>Football</h3><p>QBs, Prizm and Optic, National Treasures, and in-season price swings.</p></div>
+    <div class="st live"><div class="dot">🏀</div><div class="lb">LIVE NOW</div><h3>Basketball, deep data</h3><p>Jordan, LeBron and Wembanyama key cards with full Card Ladder sales history built in.</p></div>
+    <div class="st live"><div class="dot">⚾</div><div class="lb">LIVE NOW</div><h3>Every other card</h3><p>Baseball, football, hockey, soccer and more, priced from recent sold listings when you scan.</p></div>
+    <div class="st"><div class="dot">🏈</div><div class="lb">NEXT</div><h3>Bowman and football depth</h3><p>1st Bowman prospects and football rookies with the same deep sales history as basketball.</p></div>
   </div>
 </div></section>
 
 <section class="s" id="plans" style="padding-top:60px"><div class="wrap">
-  <div style="text-align:center"><span class="eyebrow rv"><b>✦</b>Plans · coming soon</span><h2 class="big rv d1">Start free. <span class="gold">Upgrade when it pays.</span></h2></div>
-  <div class="plans">
-    <div class="plan rv"><h3>Free Collector</h3><div class="pr">$0</div><span style="color:var(--muted);font-size:13px">Get a feel for it</span><ul><li>Limited lookups</li><li>Sample rankings</li><li>Dealer calculator</li></ul></div>
-    <div class="plan rv d1"><h3>Collector Pro</h3><div class="pr">$9.99<small>/mo</small></div><span style="color:var(--muted);font-size:13px">Your collection</span><ul><li>Portfolio tracking</li><li>Valuations & watchlists</li><li>Card scanning</li></ul></div>
-    <div class="plan hot rv d2"><span class="badge">MOST POPULAR</span><h3>Investor Pro</h3><div class="pr">$19.99<small>/mo</small></div><span style="color:var(--muted);font-size:13px">Serious buyers</span><ul><li>Everything in Collector</li><li>Best Buys rankings</li><li>Price alerts & history</li><li>Grading ROI</li></ul></div>
-    <div class="plan rv d3"><h3>Dealer Pro</h3><div class="pr">$39.99<small>/mo</small></div><span style="color:var(--muted);font-size:13px">The show floor</span><ul><li>Everything in Investor</li><li>Inventory & margins</li><li>Bulk pricing</li><li>Card show mode</li></ul></div>
+  <div style="text-align:center"><span class="eyebrow rv"><b>✦</b>Pricing</span><h2 class="big rv d1">Free while we launch.</h2>
+  <p class="lead rv d2" style="margin:0 auto">Every tool is included. No card needed, no trial clock.</p></div>
+  <div class="freeplan glass rv d2"><div class="gl" style="background:var(--gold);left:-200px;top:-200px;opacity:.22"></div>
+    <div class="fpl"><div class="fpr">$0</div><div class="fps">Collector or dealer, everything below</div><a class="btn pri mag" href="https://hssportscards.com/app">Create your free account →</a></div>
+    <ul class="fpu"><li>Live camera scanning</li><li>Prices for any card, any sport</li><li>Collection value and sell or hold signals</li><li>Show Mode with max offers</li><li>Market rankings and heatmap</li><li>Trade analyzer and centering tool</li><li>Grade-or-sell-raw calculator</li><li>Profit and tax report</li><li>AI advisor on your own cards</li><li>Showcase for buyers</li></ul>
   </div>
 </div></section>
 
+
+<section class="s" id="about"><div class="wrap brand">
+  <div class="bimg rv"><div class="bglow"></div><img src="logo.png" alt="H&amp;S Sports Cards logo"></div>
+  <div class="rv d1"><span class="eyebrow"><b>✦</b>Who we are</span><h2 class="big" style="font-size:clamp(34px,4.4vw,62px)">Built by <span class="gold">H&amp;S Sports Cards.</span></h2>
+    <p class="lead">HS Card Market comes from H&amp;S Sports Cards, a family card business that buys and sells graded cards every week. We built the tool we wanted at every show: point at a card, see what it really sells for, and decide in seconds.</p>
+    <div class="bl"><a class="btn sec mag" href="https://hssportscards.com">Shop the H&amp;S store →</a></div></div>
+</div></section>
+
+<section class="s" id="faq" style="padding-top:40px"><div class="wrap" style="max-width:900px">
+  <div style="text-align:center"><span class="eyebrow rv"><b>?</b>FAQ</span><h2 class="big rv d1">Questions, answered.</h2></div>
+  <div class="faq rv d2">
+    <details><summary>Is it really free?</summary><p>Yes. Every tool is free while we launch. You just make an account so your collection is saved.</p></details>
+    <details><summary>Do I need to download anything?</summary><p>No. It runs in your phone’s browser at hssportscards.com/app. Add it to your home screen and it opens like an app.</p></details>
+    <details><summary>How does live scanning work?</summary><p>Tap Scan a card and allow the camera. Hold the card inside the gold frame for about a second and it captures by itself, then reads the player, set, number, grade and cert.</p></details>
+    <details><summary>Which cards can it price?</summary><p>Any trading card in any sport, graded or raw. Key Jordan, LeBron and Wembanyama cards have full Card Ladder sales history built in. Everything else is priced from recent sold listings on eBay, 130point, PSA, Goldin and Fanatics Collect.</p></details>
+    <details><summary>Which grading companies does it read?</summary><p>PSA, BGS, SGC and CGC slabs. For raw cards it estimates centering, corners, edges and surface, and the chance of each PSA grade.</p></details>
+    <details><summary>Can anyone else see my collection?</summary><p>No. Your cards, costs and sales are saved to your own account and only you can see them.</p></details>
+    <details><summary>I already have an H&amp;S Sports Cards account.</summary><p>Use the same login. Go to hssportscards.com/app and log in.</p></details>
+  </div>
+</div></section>
 <section class="s" id="waitlist" style="padding-top:40px"><div class="wrap">
   <div class="glass rv" style="max-width:760px;margin:0 auto;padding:44px;text-align:center"><div class="gl" style="background:var(--gold);left:-180px;top:-180px;opacity:.2"></div>
     <span class="eyebrow"><b>✦</b>Free to start</span><h2 class="big" style="font-size:clamp(32px,4vw,52px)">Your cards, <span class="gold">priced.</span></h2>
@@ -506,12 +703,17 @@ p.lead{font-size:19.5px;letter-spacing:-.005em}
 </div></section>
 
 <div class="cta rv" id="cta"><canvas id="burst"></canvas>
-  <div class="in"><span class="eyebrow"><b>✦</b>HS Card Market</span><h2 style="margin:22px 0 22px">Stop guessing.<br><span class="holo-t">Start knowing.</span></h2>
+  <div class="in"><span class="eyebrow"><b>✦</b>HS Card Market</span><h2 style="margin:22px 0 22px">Stop guessing.<br><span class="gold">Start knowing.</span></h2>
   <p class="lead" style="margin:0 auto 34px">Your next card show, priced before you walk in.</p>
   <a class="btn pri mag" id="ctabtn" href="https://hssportscards.com/app">Create your free account →</a></div>
 </div>
 
-<footer><div class="wrap"><a class="logo" href="#top"><img class="lgimg" src="logo.png" alt="HS Card Market logo">HS Card Market</a><span style="margin-left:auto;max-width:660px">Values are estimates from recorded sales and are not financial advice. Not affiliated with or endorsed by PSA, Beckett, SGC, CGC, Card Ladder, eBay, the NBA or any player. All card artwork on this page is original illustration.</span></div></footer>
+<footer><div class="wrap fgrid">
+  <div><a class="logo" href="#top"><img class="lgimg" src="logo.png" alt="HS Card Market logo">HS Card Market</a><p class="fdesc">Scan any card. Know what it’s worth. From H&amp;S Sports Cards.</p></div>
+  <div class="fcol"><h4>App</h4><a href="https://hssportscards.com/app">Open the app</a><a href="https://hssportscards.com/signup?next=/app">Create account</a><a href="https://hssportscards.com/login?next=/app">Log in</a></div>
+  <div class="fcol"><h4>Explore</h4><a href="#scan">Scanning</a><a href="#toolkit">Tools</a><a href="#watch">Demo video</a><a href="#faq">FAQ</a></div>
+  <div class="fcol"><h4>H&amp;S</h4><a href="https://hssportscards.com">Shop the store</a><a href="https://hssportscards.com/goat">GOAT Report</a><a href="https://hssportscards.com/sell">Sell or trade</a></div>
+</div><div class="wrap fbot"><span>© 2026 H&amp;S Sports Cards</span><span>Values are estimates from recorded sales and are not financial advice. Not affiliated with or endorsed by PSA, Beckett, SGC, CGC, Card Ladder, eBay, the NBA or any player. All card artwork on this page is original illustration.</span></div></footer>
 
 <script>
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches, FINE = matchMedia('(pointer:fine)').matches;
@@ -714,6 +916,54 @@ if ($('wlForm')) $('wlForm').addEventListener('submit', async e => { e.preventDe
   (function f() { if (vis) { x.clearRect(0, 0, W, H); if (Math.random() < .5) add(1, Math.random() * W, H + 10, .8);
       P = P.filter(p => p.l > 0); for (const p of P) { p.x += p.vx; p.y += p.vy; p.vy -= .01 * devicePixelRatio; p.vx *= .99; p.l -= .006; x.globalAlpha = Math.max(0, p.l); x.fillStyle = p.c; x.shadowBlur = 12; x.shadowColor = p.c; x.beginPath(); x.arc(p.x, p.y, p.s * devicePixelRatio, 0, 7); x.fill(); } x.globalAlpha = 1; x.shadowBlur = 0; }
     if (!RM) requestAnimationFrame(f); })();
+})();
+
+// ===== v12 toolkit demos =====
+(function () {
+  const RMx = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // phone card art
+  const pa = document.querySelector('#phone .art'); if (pa) pa.insertAdjacentHTML('afterbegin', cardFront(SLABS[0].k).svg);
+  // slabs in demos
+  const putSlab = (el, i) => { if (el) { el.className = 'ms'; el.innerHTML = slab(SLABS[i]); } };
+  putSlab(document.getElementById('kShowSlab'), 0);
+  const kc = document.getElementById('kCase');
+  if (kc) [0, 3, 2, 1, 4].forEach(i => { const d = document.createElement('div'); kc.appendChild(d); putSlab(d, i); });
+  const cc = document.getElementById('kCenCard'); if (cc) cc.innerHTML = cardFront(SLABS[1].k).svg.replace('class="cf"', '');
+  // live hover glow
+  document.querySelectorAll('.kt').forEach(k => k.addEventListener('mousemove', e => { const r = k.getBoundingClientRect(); k.style.setProperty('--x', (e.clientX - r.left) + 'px'); k.style.setProperty('--y', (e.clientY - r.top) + 'px'); }));
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  const vis = new Set();
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { vis.add(e.target); e.target.classList.add('in'); } else vis.delete(e.target); }), { threshold: .35 });
+  document.querySelectorAll('.kt').forEach(k => io.observe(k));
+  const seen = el => vis.has(el.closest('.kt'));
+  async function type(el, txt, ms = 70) { el.textContent = ''; for (const ch of txt) { el.textContent += ch; await sleep(ms); } }
+  // Show Mode loop
+  (async () => { const a = document.getElementById('kAsk'), v = document.getElementById('kVerd'); if (!a) return;
+    if (RMx) { a.textContent = '$8,000'; v.classList.add('on'); return; }
+    for (;;) { while (!seen(a)) await sleep(400); v.classList.remove('on'); a.textContent = ''; await sleep(700); await type(a, '$8,000', 110); await sleep(500); v.classList.add('on'); await sleep(3800); } })();
+  // Centering loop
+  (async () => { const L = document.getElementById('kL'), R = document.getElementById('kR'), c = document.getElementById('kCenCard'), r = document.getElementById('kRatio'), g = document.getElementById('kGrade'); if (!L) return;
+    const states = [[9, 9, '50/50', 'PSA 10'], [11, 7.5, '59/41', 'PSA 9'], [13, 6.5, '67/33', 'PSA 7'], [9.8, 8.2, '54/46', 'PSA 10']];
+    let k = 0; const set = ([l, rr, ratio, grade]) => { c.style.setProperty('--l', l + '%'); c.style.setProperty('--r', rr + '%'); L.style.left = l + '%'; R.style.left = (100 - rr) + '%'; r.textContent = ratio; g.textContent = grade; g.style.color = grade === 'PSA 10' ? 'var(--green)' : grade === 'PSA 9' ? 'var(--gold2)' : 'var(--red)'; };
+    set(states[0]); if (RMx) return;
+    for (;;) { await sleep(2400); if (!seen(L)) continue; k = (k + 1) % states.length; set(states[k]); } })();
+  // Advisor typing
+  (async () => { const el = document.getElementById('kAdv'); if (!el) return;
+    const html = 'Your <b>1986 Fleer PSA 8</b> is worth <b>$15,450</b>, up 106% on cost, but the market is down 24% in 3 months. If you want to lock in the gain, now is a good time to list it.';
+    if (RMx) { el.innerHTML = html; return; }
+    for (;;) { while (!seen(el)) await sleep(400); el.innerHTML = '<span class="spin" style="display:inline-block;vertical-align:middle"></span>'; await sleep(1100);
+      const plain = html.replace(/<[^>]+>/g, ''); let out = '';
+      for (let i = 0; i < plain.length; i += 3) { out = plain.slice(0, i + 3); el.textContent = out; await sleep(28); }
+      el.innerHTML = html; await sleep(5200); } })();
+  // Showcase carousel
+  (async () => { const row = document.getElementById('kCase'); if (!row) return; const items = [...row.children]; let c = 0;
+    const lay = () => items.forEach((it, i) => { let d = i - c; if (d > 2) d -= items.length; if (d < -2) d += items.length;
+      it.style.transform = `translateX(${d * 92}px) scale(${d === 0 ? 1 : .72}) perspective(600px) rotateY(${-d * 22}deg)`; it.style.opacity = Math.abs(d) > 1 ? 0 : d === 0 ? 1 : .45; it.style.zIndex = 10 - Math.abs(d); it.style.filter = d === 0 ? 'none' : 'saturate(.6) blur(.5px)'; });
+    lay(); if (RMx) return; for (;;) { await sleep(2600); if (!seen(row)) continue; c = (c + 1) % items.length; lay(); } })();
+  // Any card lookup loop
+  (async () => { const q = document.getElementById('kQ'), st = document.getElementById('kAst'), res = document.getElementById('kRes'); if (!q) return;
+    if (RMx) { q.textContent = 'wemby prizm silver psa 10'; res.classList.add('on'); return; }
+    for (;;) { while (!seen(q)) await sleep(400); res.classList.remove('on'); st.classList.remove('on'); await sleep(600); await type(q, 'wemby prizm silver psa 10', 60); await sleep(300); st.classList.add('on'); await sleep(1600); st.classList.remove('on'); res.classList.add('on'); await sleep(4200); } })();
 })();
 </script>
 </body>
